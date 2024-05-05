@@ -1,0 +1,15 @@
+Table users {
+  id int [pk, increment]
+  name varchar(50)
+  email varchar(100) [unique]
+  created_at timestamp
+}
+
+Table posts {
+  id int [pk, increment]
+  user_id int [ref: > users.id]
+  title varchar(100)
+  content text
+  created_at timestamp
+}
+
